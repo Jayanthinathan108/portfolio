@@ -17,7 +17,7 @@
 <aside class="sidebar">
   <div class="profile">
     <div class="profile-avatar">
-  <img src="images/avatar.png.png" alt="Profile Avatar">
+  <img src="assets/images/avatar.png.png" alt="Profile Avatar">
 </div>
     <h2>Jayanthinathan</h2>
     <span class="role">Associate – IT Support</span>
@@ -103,7 +103,7 @@
     </div>
   </div>
 
-</aside>
+</aside>  
 
 <!-- MAIN -->
 <main class="main">
@@ -112,9 +112,10 @@
   <a class="active" data-page="about">About</a>
   <a data-page="experience">Resume</a>
   <a data-page="skills">Skills</a>
+  <a data-page="Project">Project</a>
   <a data-page="blog">Blog</a>
   <a data-page="contact">Contact</a>
-  <a href="file:///D:/portfolio/portfolio/resume/JAYANTHINATHAN_IT_SUPPORT_ENGINEER.pdf" class="download" download>Download Resume</a>
+  <a href="assets/resume/JAYANTHINATHAN_L2_IT_SUPPORT.pdf" target="_blank" class="download" download>Download Resume</a>
   <button id="themeToggle">Dark Mode</button>
 </div>
 
@@ -348,6 +349,12 @@ I handle incident resolution, system configuration, and end-user support to ensu
   </div>
 </section>
 
+<!-- Project -->
+<section id="Project">
+  <h1>Project</h1>
+  <div class="line"></div>
+
+</section>
 
 <!-- BLOG -->
 <section id="blog">
@@ -375,7 +382,7 @@ I handle incident resolution, system configuration, and end-user support to ensu
     </article>
 
     <article class="blog-card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
+      <img src="assets/images/img_blog_01.png" alt="">
       <div class="blog-content">
         <span class="meta">UI • Feb 23, 2025</span>
         <h3>Design Digest #80</h3>
@@ -384,20 +391,33 @@ I handle incident resolution, system configuration, and end-user support to ensu
     </article>
 
     <article class="blog-card">
-      <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" alt="">
+      <img src="assets/images/img_blog_02.png" alt="">
       <div class="blog-content">
-        <span class="meta">UX • Feb 23, 2025</span>
-        <h3>UI Interactions of the Week</h3>
-        <p>Beautiful micro-interactions that improve user experience.</p>
+         <span class="meta">UI • Feb 23, 2025</span>
+        <h3>Design Digest #80</h3>
+        <p>Weekly roundup of the best UI, UX and design inspiration.</p>
       </div>
     </article>
-    
-    <!-- Load More Button -->
-    <div class="load-more-wrapper">
-      <button type="button" class="load-more-btn">Load More</button>
+
+    <!-- BLOG POPUP MODAL -->
+     <div class="blog-modal" id="blogModal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img id="modalImg" src="" alt="">
+        <div class="modal-body">
+          <span id="modalMeta" class="meta"></span>
+          <h2 id="modalTitle"></h2>
+          <p id="modalDesc"></p>
+        </div>
+      </div>
     </div>
     
   </div>
+
+  <div class="load-more-wrapper">
+  <button id="loadMoreBtn" class="load-more-btn">Load More</button>
+</div>
+
 </section>
   
 <section id="contact">
@@ -477,7 +497,3 @@ I handle incident resolution, system configuration, and end-user support to ensu
 <script src="js/script.js"></script>
 </body>
 </html>
-
-
-
-
