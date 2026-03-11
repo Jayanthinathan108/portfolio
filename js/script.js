@@ -17,18 +17,23 @@ if(savedPage){
   document.querySelector(`[data-page="${savedPage}"]`).click();
 }
 
-/* DARK MODE TEXT */
-const toggle=document.getElementById('themeToggle');
-function updateText(){
-  toggle.textContent=document.body.classList.contains('dark')
-    ? 'Light Mode'
-    : 'Dark Mode';
+/* DARK MODE TEXT FIX */
+const toggle = document.getElementById('themeToggle');
+
+function updateText() {
+  const isDark = document.body.classList.contains('dark');
+  toggle.textContent = isDark ? 'Light Mode' : 'Dark Mode';
 }
-if(localStorage.theme==="dark") document.body.classList.add("dark");
+
+// Check local storage on load
+if (localStorage.theme === "dark") {
+  document.body.classList.add("dark");
+}
 updateText();
-toggle.onclick=()=>{
+
+toggle.onclick = () => {
   document.body.classList.toggle("dark");
-  localStorage.theme=document.body.classList.contains("dark")?"dark":"light";
+  localStorage.theme = document.body.classList.contains("dark") ? "dark" : "light";
   updateText();
 };
 
@@ -66,3 +71,74 @@ modal.onclick = (e)=>{
     modal.classList.remove("active");
   }
 };
+
+/* PROJECT FILTER FIX */
+const filterBtns = document.querySelectorAll(".project-filters button");
+const projectCards = document.querySelectorAll(".project-card");
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    filterBtns.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    
+    const filter = btn.dataset.filter;
+    projectCards.forEach(card => {
+      if (filter === "all" || card.classList.contains(filter)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+});
+
+/* Popup */
+
+function openPopup(title,year,desc){
+document.getElementById("popupTitle").innerText=title;
+document.getElementById("popupYear").innerText=year;
+document.getElementById("popupDesc").innerText=desc;
+document.getElementById("popup").style.display="flex";
+}
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+
+/* Filter */
+
+function filterProjects(type,btn){
+
+let cards=document.querySelectorAll(".project-card");
+
+cards.forEach(card=>{
+if(type==="all"||card.classList.contains(type)){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+});
+
+document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+
+}
+
+links.forEach(link=>{
+  link.addEventListener("click",(e)=>{
+    e.preventDefault();
+
+    localStorage.currentPage = link.dataset.page;
+
+    links.forEach(l=>l.classList.remove('active'));
+    sections.forEach(s=>s.classList.remove('active'));
+
+    link.classList.add('active');
+    document.getElementById(link.dataset.page).classList.add('active');
+  });
+});
+
+const date = new Date();
+const options = { month: "long", year: "numeric" };
+document.getElementById("updateDate").textContent =
+date.toLocaleDateString("en-US", options).replace(",", " /");
