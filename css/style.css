@@ -919,3 +919,24 @@ body.dark .profile-avatar {
 .profile-avatar:hover {
   transform: translateY(-4px) scale(1.04);
 }
+
+/* ===== REMOVE BLUE TAP HIGHLIGHT ON MOBILE ===== */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+.nav a,
+.nav button,
+#download-resume,
+#themeToggle,
+.blog-card,
+.project-card,
+.cert-link,
+.load-more-btn,
+.social-link,
+.email-link,
+.whatsapp-link {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
