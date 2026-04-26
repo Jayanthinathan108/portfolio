@@ -771,7 +771,7 @@ body.dark .contact-form textarea::placeholder { color: #9ca3af; }
 .github   { background: #111827; }
 .blogger  { background: #ff5722; }
 .email { background: #EA4335; } /* Gmail red */
-.whatsapp { background: #25d366; 
+.whatsapp { background: #25d366; }
 
 body:not(.dark) .social-link { box-shadow: 0 10px 24px rgba(0,0,0,.15); }
 body.dark .social-link { box-shadow: 0 14px 36px rgba(0,0,0,.45); }
@@ -921,6 +921,41 @@ body.dark .profile-avatar {
 /* Hover lifts the avatar slightly in both modes */
 .profile-avatar:hover {
   transform: translateY(-4px) scale(1.04);
+}
+
+/* ===== SCROLL TO TOP ===== */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(79,70,229,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s, background 0.3s;
+  z-index: 999;
+}
+
+#scrollTopBtn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#scrollTopBtn:hover {
+  background: #6366f1;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(99,102,241,0.5);
 }
 
 /* ===== REMOVE BLUE TAP HIGHLIGHT ON MOBILE ===== */
