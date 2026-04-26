@@ -769,6 +769,9 @@ body.dark .contact-form textarea::placeholder { color: #9ca3af; }
 
 .linkedin { background: #0a66c2; }
 .github   { background: #111827; }
+.blogger  { background: #ff5722; }
+.email { background: #EA4335; } /* Gmail red */
+.whatsapp { background: #25d366; 
 
 body:not(.dark) .social-link { box-shadow: 0 10px 24px rgba(0,0,0,.15); }
 body.dark .social-link { box-shadow: 0 14px 36px rgba(0,0,0,.45); }
