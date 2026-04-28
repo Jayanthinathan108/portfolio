@@ -141,7 +141,7 @@ body.dark .icon { background: #111827; color: #6366f1; }
 .email-link:hover { text-decoration: underline; }
 
 .whatsapp-link { color: inherit; text-decoration: none; }
-.whatsapp-link:hover { text-decoration: underline; }
+.whatsapp-link:hover { text-decoration: none; }
 
 /* ========================================
    MAIN PANEL
@@ -868,7 +868,7 @@ body.dark .footer-inner .name { color: #6366f1; }
 .email-link {
   color: inherit;
   text-decoration: none;
-  font-size: 12px;   /* slightly smaller so it fits on one line */
+  font-size: 14px;   /* slightly smaller so it fits on one line */
   word-break: normal;
   white-space: nowrap;
   overflow: hidden;
