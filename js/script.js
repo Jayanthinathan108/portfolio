@@ -134,3 +134,19 @@ if (dateEl) {
   const now = new Date();
   dateEl.textContent = now.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }).replace(',', ' /');
 }
+
+/* ===== CERTIFICATE MODAL ===== */
+function openCertModal(imgSrc) {
+  document.getElementById('certModalImg').src = imgSrc;
+  document.getElementById('certModal').style.display = 'flex';
+}
+
+function closeCertModal() {
+  document.getElementById('certModal').style.display = 'none';
+  document.getElementById('certModalImg').src = '';
+}
+
+// Close on outside click
+document.getElementById('certModal').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('certModal')) closeCertModal();
+});
