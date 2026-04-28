@@ -385,7 +385,7 @@ body.dark .skill-card h3 { color: #f9fafb; }
   border: 1px solid #d1d5db;
   font-size: 14px;
   transition: 0.3s;
-  cursor: default;
+  cursor: pointer;
 }
 .skill-tags span:hover { background: #6366f1; color: #fff; border-color: #6366f1; }
 
@@ -434,6 +434,7 @@ body.dark .cert-desc { color: #9ca3af; }
   color: #6366f1;
   text-decoration: none;
   font-weight: 500;
+  cursor: pointer;
 }
 .cert-link:hover { text-decoration: underline; }
 body.dark .cert-link { color: #a5b4fc; }
@@ -875,6 +876,7 @@ body.dark .footer-inner .name { color: #6366f1; }
   text-overflow: ellipsis;
   display: block;
   max-width: 160px;
+  cursor: pointer;
 }
 
 /* ===== AVATAR GLOW EFFECT ===== */
