@@ -273,7 +273,7 @@
               <p class="org">Besant Technologies, Bangalore</p>
               <span class="year">Jul 2024 – Dec 2024</span>
               <p class="cert-desc">Learned TCP/IP, DNS, DHCP, and basic network troubleshooting.</p>
-              <a href="assets/images/certifications_01.jpg" target="_blank" rel="noopener" class="cert-link">View Certificate</a>
+              <a class="cert-link" onclick="openCertModal('assets/images/certifications_01.jpg')">View Certificate</a>
             </div>
 
             <!-- FIX: split merged title — was "PeripheralsNetworking Basics" -->
@@ -282,7 +282,7 @@
               <p class="org">Skill India Digital Hub</p>
               <span class="year">Aug 2024</span>
               <p class="cert-desc">Trained in hardware troubleshooting, system installation, and peripheral device support.</p>
-              <a href="assets/images/certifications_01.jpg" target="_blank" rel="noopener" class="cert-link">View Certificate</a>
+              <a class="cert-link" onclick="openCertModal('assets/images/certifications_02.jpg')">View Certificate</a>
             </div>
 
             <div class="cert-card">
@@ -290,7 +290,7 @@
               <p class="org">Vcodas.com</p>
               <span class="year">Pursuing • 2026 – Present</span>
               <p class="cert-desc">Covered HTML, CSS, and JavaScript basics.</p>
-              <a href="assets/images/certifications_01.jpg" target="_blank" rel="noopener" class="cert-link">View Certificate</a>
+              <a class="cert-link" onclick="openCertModal('assets/images/certifications_03.jpg')">View Certificate</a>
             </div>
 
           </div><!-- /certifications -->
@@ -477,6 +477,14 @@
     </footer>
     
     <script src="js/script.js"></script>
+
+    <!-- Certificate Modal -->
+    <div id="certModal" class="cert-modal-overlay">
+      <div class="cert-modal-box">
+        <span class="cert-modal-close" onclick="closeCertModal()">✕</span>
+        <img id="certModalImg" src="" alt="Certificate">
+      </div>
+    </div>
 
   </body>
 
