@@ -1026,7 +1026,7 @@ body.dark .profile-avatar {
   outline: none;
 }
 
-/* ===== CERTIFICATE MODAL ===== */
+/* ===== CERTIFICATE MODAL — responsive fix ===== */
 .cert-modal-overlay {
   display: none;
   position: fixed;
@@ -1036,6 +1036,7 @@ body.dark .profile-avatar {
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  padding: 16px; /* prevents touching screen edges on mobile */
 }
 
 .cert-modal-box {
@@ -1043,19 +1044,17 @@ body.dark .profile-avatar {
   background: #fff;
   border-radius: 20px;
   padding: 16px;
-  max-width: 90%;
+  width: 100%;
+  max-width: 450px;    /* desktop — full size */
   max-height: 90vh;
-  overflow: auto;
+  overflow-y: auto;
   animation: popup .3s ease;
 }
 
-body.dark .cert-modal-box {
-  background: #1e293b;
-}
+body.dark .cert-modal-box { background: #1e293b; }
 
 .cert-modal-box img {
   width: 100%;
-  max-width: 700px;
   height: auto;
   border-radius: 12px;
   display: block;
@@ -1069,13 +1068,26 @@ body.dark .cert-modal-box {
   cursor: pointer;
   color: #6b7280;
   font-weight: 600;
-  line-height: 1;
+  z-index: 1;
+  background: #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
+.cert-modal-close:hover { color: #111827; }
+body.dark .cert-modal-close { background: #1e293b; color: #9ca3af; }
+body.dark .cert-modal-close:hover { color: #fff; }
 
-.cert-modal-close:hover {
-  color: #111827;
-}
-
-body.dark .cert-modal-close:hover {
-  color: #fff;
+/* Mobile */
+@media (max-width: 768px) {
+  .cert-modal-box {
+    max-width: 100%;     /* full width on mobile */
+    padding: 12px;
+    border-radius: 16px;
+    max-height: 85vh;
+  }
 }
