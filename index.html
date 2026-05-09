@@ -105,6 +105,7 @@
           <a class="active" data-page="about">About</a>
           <a data-page="experience">Resume</a>
           <a data-page="skills">Skills</a>
+          <a data-page="certifications">Certifications</a>
           <a data-page="Project">Project</a>
           <a data-page="blog">Blog</a>
           <a data-page="contact">Contact</a>
@@ -263,17 +264,20 @@
               <span>JavaScript (Basics)</span>
             </div>
           </div>
-
+        </section>
+        
+        <!-- ===== CERTIFICATIONS ===== -->
+         <section id="certifications">
           <!-- FIX: properly closed all divs in certifications -->
           <div class="certifications">
-            <h2 class="certifications-title">Certifications & Training</h2>
-
+            <h2>Certifications & Training</h2>
+            <div class="line"></div>
             <div class="cert-card">
               <h3>Networking Basics</h3>
               <p class="org">Besant Technologies, Bangalore</p>
               <span class="year">Jul 2024 – Dec 2024</span>
               <p class="cert-desc">Learned TCP/IP, DNS, DHCP, and basic network troubleshooting.</p>
-              <a class="cert-link" onclick="openCertModal('assets/images/certifications_01.jpg')">View Certificate</a>
+              <a class="cert-link" onclick="openCertModal('assets/images/certifications_network_01.jpg')">View Certificate →</a>
             </div>
 
             <!-- FIX: split merged title — was "PeripheralsNetworking Basics" -->
@@ -282,7 +286,7 @@
               <p class="org">Skill India Digital Hub</p>
               <span class="year">Aug 2024</span>
               <p class="cert-desc">Trained in hardware troubleshooting, system installation, and peripheral device support.</p>
-              <a class="cert-link" onclick="openCertModal('assets/images/img_blog_01.png')">View Certificate</a>
+              <a class="cert-link" onclick="openCertModal('assets/images/certifications_field _technician_computing_peripherals_02.png')">View Certificate →</a>
             </div>
 
             <div class="cert-card">
@@ -290,7 +294,7 @@
               <p class="org">Vcodas.com</p>
               <span class="year">Pursuing • 2026 – Present</span>
               <p class="cert-desc">Covered HTML, CSS, and JavaScript basics.</p>
-              <a class="cert-link" onclick="openCertModal('assets/images/certifications_03.jpg')">View Certificate</a>
+              <a class="cert-link" onclick="openCertModal('assets/images/certifications_03.jpg')">View Certificate →</a>
             </div>
 
           </div><!-- /certifications -->
@@ -311,7 +315,9 @@
 
           <div class="projects">
             <div class="project-card web" onclick="openPopup('Portfolio Website','2026','Built using HTML, CSS, JavaScript & Responsive design with dark mode.')">
-              <div class="project-image"></div>
+              <div class="project-image">
+                <img src="assets/images/project_portfolio_01.png" alt="Portfolio Website Screenshot">
+              </div>
               <div class="project-tags">
                 <span>HTML</span>
                 <span>CSS</span>
