@@ -123,9 +123,8 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* ===== CERT MODAL — close on outside click ===== */
-window.addEventListener('click', (e) => {
-  const certModal = document.getElementById('certModal');
-  if (certModal && e.target === certModal) certModal.style.display = 'none';
+document.getElementById('certModal').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('certModal')) closeCertModal();
 });
 
 /* ===== LAST UPDATED DATE ===== */
