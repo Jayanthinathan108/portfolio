@@ -505,7 +505,7 @@ body.dark .project-card { background: #1e293b; border-color: #374151; box-shadow
   background: linear-gradient(135deg, #6366f1, #a855f7);
 }
 
-..project-image {
+.project-image {
   height: 180px;
   border-radius: 14px;
   margin-bottom: 15px;
@@ -1026,6 +1026,7 @@ body.dark .profile-avatar {
   outline: none;
 }
 
+
 /* ===== CERTIFICATE MODAL — responsive fix ===== */
 .cert-modal-overlay {
   display: none;
@@ -1090,4 +1091,29 @@ body.dark .cert-modal-close:hover { color: #fff; }
     border-radius: 16px;
     max-height: 85vh;
   }
+}
+
+/* ===== RIPPLE CLICK EFFECT ===== */
+.clicker {
+  width: 60px;
+  height: 60px;
+  margin-left: -30px;
+  margin-top: -30px;
+  background: #4f46e5;   /* matches your purple theme */
+  border-radius: 100%;
+  position: absolute;
+  transform: scale(0);
+  opacity: .3;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+body.dark .clicker {
+  background: #818cf8;   /* lighter purple in dark mode */
+}
+
+.clicker.is-active {
+  opacity: 0;
+  transition: opacity 900ms ease, transform 900ms ease;
+  transform: scale(1);
 }
