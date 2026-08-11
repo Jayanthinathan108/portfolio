@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Animated typing -->
-<img src="https://readme-typing-svg.demolab.com?font=Google+Sans&size=28&duration=3000&pause=1000&color=4F46E5&center=true&vCenter=true&width=600&lines=Hi+%F0%9F%91%8B+I'm+Jayanthinathan;Associate+IT+Support+Engineer;L1%2FL2+Support+%7C+Chennai%2C+India" alt="Typing SVG"/>
+<img src="https://readme-typing-svg.demolab.com?font=Google+Sans&size=28&duration=3000&pause=1000&color=4F46E5&center=true&vCenter=true&width=600&lines=Hi+%F0%9F%91%8B+I'm+Jayanthinathan;Associate+IT+Support+Engineer;L1%2F+Support+%7C+Chennai%2C+India" alt="Typing SVG"/>
 
 <!-- Open to Work badge -->
 <img src="https://img.shields.io/badge/🟢_Open_To_Work-Available-brightgreen?style=for-the-badge" alt="Open to Work"/>
@@ -31,7 +31,7 @@
 
 ### 👨‍💻 About Me
 
-- 🔧 **L1/L2 IT Support Engineer** with 1+ year experience
+- 🔧 **L1 IT Support Engineer** with 1+ year experience
 - 🏢 Currently at **Cinépolis India, Chennai**
 - 🖥️ Specializing in **Windows OS, Active Directory, Networking**
 - 🌱 Currently learning **AWS & Azure**
