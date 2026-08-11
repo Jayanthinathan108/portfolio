@@ -122,16 +122,14 @@ document.addEventListener('keydown', (e) => {
   if (certModal) certModal.style.display = 'none';
 });
 
-/* ===== CERT MODAL — close on outside click ===== */
-document.getElementById('certModal').addEventListener('click', (e) => {
-  if (e.target === document.getElementById('certModal')) closeCertModal();
-});
-
 /* ===== LAST UPDATED DATE ===== */
 const dateEl = document.getElementById('updateDate');
 if (dateEl) {
   const now = new Date();
-  dateEl.textContent = now.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }).replace(',', ' /');
+  dateEl.textContent = now.toLocaleDateString('en-US', { 
+    month: 'long', 
+    year: 'numeric' 
+  }).replace(',', ' /');
 }
 
 /* ===== CERTIFICATE MODAL ===== */
@@ -145,7 +143,10 @@ function closeCertModal() {
   document.getElementById('certModalImg').src = '';
 }
 
-// Close on outside click
-document.getElementById('certModal').addEventListener('click', (e) => {
-  if (e.target === document.getElementById('certModal')) closeCertModal();
-});
+// Close on outside click — wrapped in null check to prevent crash
+const certModalEl = document.getElementById('certModal');
+if (certModalEl) {
+  certModalEl.addEventListener('click', (e) => {
+    if (e.target === certModalEl) closeCertModal();
+  });
+}
