@@ -109,7 +109,7 @@
           <a data-page="Project">Project</a>
           <a data-page="blog">Blog</a>
           <a data-page="contact">Contact</a>
-          <a href="assets/resume/Jayanthinathan_V_L1_IT_Support_Resume.pdf" target="_blank" class="download-resume" id="download-resume" download>Download Resume</a>
+          <a href="assets/resume/JAYANTHINATHAN_L2_IT_SUPPORT.pdf" target="_blank" class="download-resume" id="download-resume" download>Download Resume</a>
           <button id="themeToggle">Dark Mode</button>
         </nav>
         
@@ -480,43 +480,6 @@
       </div>
     </footer>
     
-    <script src="js/script.js"></script>
-
-    <!-- Ripple click effect dependencies -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<script>
-(function() {
-  var i = function(n, t) { return window.setTimeout(t, n) },
-  o = {
-    WebkitTransition: "webkitTransitionEnd",
-    MozTransition: "transitionend",
-    OTransition: "oTransitionEnd otransitionend",
-    msTransition: "MSTransitionEnd",
-    transition: "transitionend"
-  },
-  e = function(n, t) {
-    var i, o = "touchstart" === n.type.toLowerCase();
-    switch (t) {
-      case "top":  i = "pageY"; break;
-      case "left": i = "pageX";
-    }
-    return (o ? n.originalEvent.touches[0] : n)[i]
-  };
-  $(document).on("mousedown touchstart", function(n) {
-    var t = $('<div class="clicker"></div>');
-    t.css({ left: e(n, "left"), top: e(n, "top") });
-    $("body").append(t);
-    i(0, function() {
-      return t.on(o[Modernizr.prefixed("transition")], function() {
-        return t.remove()
-      }), t.addClass("is-active")
-    });
-  });
-}).call(this);
-</script>
-
     <!-- Certificate Modal -->
     <div id="certModal" class="cert-modal-overlay">
       <div class="cert-modal-box">
@@ -524,6 +487,42 @@
         <img id="certModalImg" src="" alt="Certificate">
       </div>
     </div>
+
+    <script src="js/script.js"></script>
+
+    <!-- Ripple click effect dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    (function() {
+      var i = function(n, t) { return window.setTimeout(t, n) },
+      o = {
+        WebkitTransition: "webkitTransitionEnd",
+        MozTransition: "transitionend",
+        OTransition: "oTransitionEnd otransitionend",
+        msTransition: "MSTransitionEnd",
+        transition: "transitionend"
+      },
+      e = function(n, t) {
+        var i, o = "touchstart" === n.type.toLowerCase();
+        switch (t) {
+          case "top":  i = "pageY"; break;
+          case "left": i = "pageX";
+        }
+        return (o ? n.originalEvent.touches[0] : n)[i]
+      };
+      $(document).on("mousedown touchstart", function(n) {
+        var t = $('<div class="clicker"></div>');
+        t.css({ left: e(n, "left"), top: e(n, "top") });
+        $("body").append(t);
+        i(0, function() {
+          return t.on(o[Modernizr.prefixed("transition")], function() {
+            return t.remove()
+          }), t.addClass("is-active")
+        });
+      });
+    }).call(this);
+    </script>
 
   </body>
 
