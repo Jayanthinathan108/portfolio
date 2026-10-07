@@ -110,7 +110,11 @@
           <a data-page="blog">Blog</a>
           <a data-page="contact">Contact</a>
           <a href="assets/resume/JAYANTHINATHAN_L2_IT_SUPPORT.pdf" target="_blank" class="download-resume" id="download-resume" download>Download Resume</a>
-          <button id="themeToggle">Dark Mode</button>
+          <div class="theme-switcher">
+            <button class="theme-btn" data-theme="light" title="Light Mode">☀️</button>
+            <button class="theme-btn active" data-theme="system" title="System Mode">💻</button>
+            <button class="theme-btn" data-theme="dark" title="Dark Mode">🌙</button>
+          </div>
         </nav>
         
         <!-- ===== ABOUT ===== -->
@@ -175,11 +179,8 @@
               <li class="timeline-item">
                 <h4 class="timeline-item-title">Associate – IT Support</h4>
                 <span>Feb 2025 – Present</span>
-                <p class="timeline-text">Cinépolis India — Chennai
-                  <br>
-                  <!-- FIX: added missing space before "networking" -->
-                  Providing L1 desktop and system support across multi-site operations — resolving hardware, software, and network issues (LAN/WAN, DNS, DHCP), managing Active Directory user accounts, delivering remote support via AnyDesk/TeamViewer, and maintaining IT asset inventory to ensure minimal downtime in a high-traffic enterprise environment.
-                </p>
+                <p class="timeline-company">Cinépolis India — Chennai</p>
+                <p class="timeline-text">Providing L1 desktop and system support across multi-site operations — resolving hardware, software, and network issues (LAN/WAN, DNS, DHCP), managing Active Directory user accounts, delivering remote support via AnyDesk/TeamViewer, and maintaining IT asset inventory to ensure minimal downtime in a high-traffic enterprise environment.</p>
               </li>
             </ul>
           </div>
@@ -268,7 +269,7 @@
          <section id="certifications">
           <!-- FIX: properly closed all divs in certifications -->
           <div class="certifications">
-            <h2>Certifications & Training</h2>
+            <h1>Certifications</h1>
             <div class="line"></div>
             <div class="cert-card">
               <h3>Networking Basics</h3>
