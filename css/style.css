@@ -189,18 +189,42 @@ body.dark .nav a { color: #e5e7eb; opacity: .8; }
 .nav a.active { color: #4f46e5; opacity: 1; font-weight: 600; }
 body.dark .nav a.active { color: #818cf8; }
 
-#themeToggle {
-  background: #4f46e5;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
+/* ===== THEME SWITCHER ===== */
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: #f1f5f9;
   border-radius: 12px;
-  cursor: pointer;
-  white-space: nowrap;
-  font-size: 14px;
-  transition: .3s;
+  padding: 4px;
+  border: 1px solid #e5e7eb;
 }
-#themeToggle:hover { background: #6366f1; transform: translateY(-2px); }
+body.dark .theme-switcher {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s, transform 0.2s;
+  line-height: 1;
+}
+.theme-btn:hover {
+  background: #e2e8f0;
+  transform: scale(1.1);
+}
+body.dark .theme-btn:hover { background: #334155; }
+
+.theme-btn.active {
+  background: #4f46e5;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.4);
+}
+.theme-btn.active:hover { background: #6366f1; }
 
 #download-resume {
   background: #4f46e5;
@@ -345,6 +369,15 @@ body.dark .timeline-list span { color: #818cf8; }
   border-radius: 50%;
   box-shadow: 0 0 0 4px #a0a9cf;
 }
+
+.timeline-company {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin: 6px 0 8px;
+  letter-spacing: 0.2px;
+}
+body.dark .timeline-company { color: #cbd5e1; }
 
 .timeline-text { color: #9ca3af; font-weight: 300; line-height: 1.6; }
 
@@ -909,7 +942,9 @@ body.dark .footer-inner .name { color: #6366f1; }
 
 @media (max-width: 480px) {
   .nav a { font-size: 13px; }
-  #download-resume, #themeToggle { font-size: 13px; padding: 8px 14px; }
+  #download-resume { font-size: 13px; padding: 8px 14px; }
+  .theme-switcher { padding: 3px; }
+  .theme-btn { font-size: 14px; padding: 5px 8px; }
 }
 
 .email-link {
@@ -1014,7 +1049,7 @@ body.dark .profile-avatar {
 .nav a,
 .nav button,
 #download-resume,
-#themeToggle,
+.theme-btn,
 .blog-card,
 .project-card,
 .cert-link,
@@ -1116,4 +1151,24 @@ body.dark .clicker {
   opacity: 0;
   transition: opacity 900ms ease, transform 900ms ease;
   transform: scale(1);
+}
+
+/* ===== DISABLE COPY PASTE ===== */
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow selecting inside form inputs only */
+input, textarea {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+#certifications .line {
+  margin-bottom: 20px; /* increase this number for more gap */
 }
