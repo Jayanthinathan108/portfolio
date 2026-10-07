@@ -28,22 +28,41 @@ if (savedPage && document.getElementById(savedPage)) {
   navigateTo(savedPage);
 }
 
-/* ===== DARK MODE ===== */
-const toggle = document.getElementById('themeToggle');
+/* ===== THEME SWITCHER (Light / System / Dark) ===== */
+const themeBtns = document.querySelectorAll('.theme-btn');
 
-function updateThemeText() {
-  toggle.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+function applyTheme(mode) {
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (mode === 'dark') {
+    document.body.classList.add('dark');
+  } else if (mode === 'light') {
+    document.body.classList.remove('dark');
+  } else {
+    // system
+    prefersDark ? document.body.classList.add('dark') : document.body.classList.remove('dark');
+  }
+
+  // Update active button
+  themeBtns.forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.theme === mode);
+  });
+
+  localStorage.themeMode = mode;
 }
 
-if (localStorage.theme === 'dark') {
-  document.body.classList.add('dark');
-}
-updateThemeText();
+// Load saved mode or default to system
+const savedMode = localStorage.themeMode || 'system';
+applyTheme(savedMode);
 
-toggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  localStorage.theme = document.body.classList.contains('dark') ? 'dark' : 'light';
-  updateThemeText();
+// Button clicks
+themeBtns.forEach(btn => {
+  btn.addEventListener('click', () => applyTheme(btn.dataset.theme));
+});
+
+// Auto-update when system preference changes (only in system mode)
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+  if ((localStorage.themeMode || 'system') === 'system') applyTheme('system');
 });
 
 /* ===== PROJECT FILTER ===== */
@@ -150,3 +169,24 @@ if (certModalEl) {
     if (e.target === certModalEl) closeCertModal();
   });
 }
+
+/* ===== DISABLE COPY PASTE ===== */
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+document.addEventListener('copy',        (e) => e.preventDefault());
+document.addEventListener('cut',         (e) => e.preventDefault());
+document.addEventListener('paste',       (e) => e.preventDefault());
+document.addEventListener('selectstart', (e) => e.preventDefault());
+
+// Disable F12, Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+S
+document.addEventListener('keydown', (e) => {
+  if (
+    e.key === 'F12' ||
+    (e.ctrlKey && e.key === 'u') ||
+    (e.ctrlKey && e.key === 's') ||
+    (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+    (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+    (e.ctrlKey && e.shiftKey && e.key === 'C')
+  ) {
+    e.preventDefault();
+  }
+});
