@@ -110,11 +110,7 @@
           <a data-page="blog">Blog</a>
           <a data-page="contact">Contact</a>
           <a href="assets/resume/JAYANTHINATHAN_L2_IT_SUPPORT.pdf" target="_blank" class="download-resume" id="download-resume" download>Download Resume</a>
-          <div class="theme-switcher">
-            <button class="theme-btn" data-theme="light" title="Light Mode">☀️</button>
-            <button class="theme-btn active" data-theme="system" title="System Mode">💻</button>
-            <button class="theme-btn" data-theme="dark" title="Dark Mode">🌙</button>
-          </div>
+          <button class="theme-cycle-btn" id="themeCycleBtn">System</button>
         </nav>
         
         <!-- ===== ABOUT ===== -->
@@ -179,8 +175,11 @@
               <li class="timeline-item">
                 <h4 class="timeline-item-title">Associate – IT Support</h4>
                 <span>Feb 2025 – Present</span>
-                <p class="timeline-company">Cinépolis India — Chennai</p>
-                <p class="timeline-text">Providing L1 desktop and system support across multi-site operations — resolving hardware, software, and network issues (LAN/WAN, DNS, DHCP), managing Active Directory user accounts, delivering remote support via AnyDesk/TeamViewer, and maintaining IT asset inventory to ensure minimal downtime in a high-traffic enterprise environment.</p>
+                <p class="timeline-text">Cinépolis India — Chennai
+                  <br>
+                  <!-- FIX: added missing space before "networking" -->
+                  Providing L1 desktop and system support across multi-site operations — resolving hardware, software, and network issues (LAN/WAN, DNS, DHCP), managing Active Directory user accounts, delivering remote support via AnyDesk/TeamViewer, and maintaining IT asset inventory to ensure minimal downtime in a high-traffic enterprise environment.
+                </p>
               </li>
             </ul>
           </div>
@@ -266,37 +265,36 @@
         </section>
         
         <!-- ===== CERTIFICATIONS ===== -->
-         <section id="certifications">
-          <!-- FIX: properly closed all divs in certifications -->
-          <div class="certifications">
-            <h1>Certifications</h1>
-            <div class="line"></div>
+        <section id="certifications">
+          <h1>Certifications & Training</h1>
+          <div class="line"></div>
+          <div class="cert-list">
+
             <div class="cert-card">
               <h3>Networking Basics</h3>
               <p class="org">Besant Technologies, Bangalore</p>
-              <span class="year">Jul 2024 – Nov 2024</span>
+              <span class="cert-year">Jul 2024 – Nov 2024</span>
               <p class="cert-desc">Learned TCP/IP, DNS, DHCP, and basic network troubleshooting.</p>
               <a class="cert-link" onclick="openCertModal('assets/images/certifications_network_01.jpg')">View Certificate →</a>
             </div>
 
-            <!-- FIX: split merged title — was "PeripheralsNetworking Basics" -->
             <div class="cert-card">
               <h3>Field Technician – Computing & Peripherals</h3>
               <p class="org">Skill India Digital Hub</p>
-              <span class="year">Aug 2024</span>
+              <span class="cert-year">Aug 2024</span>
               <p class="cert-desc">Trained in hardware troubleshooting, system installation, and peripheral device support.</p>
-              <a class="cert-link" onclick="openCertModal('assets/images/certifications_field _technician_computing_peripherals_02.png')">View Certificate →</a>
+              <a class="cert-link" onclick="openCertModal('assets/images/certifications_field_technician_computing_peripherals_02.png')">View Certificate →</a>
             </div>
 
             <div class="cert-card">
               <h3>Complete HTML, CSS & JavaScript Course</h3>
               <p class="org">Vcodas.com</p>
-              <span class="year">In Progress • 2026 – Present</span>
+              <span class="cert-year">In Progress • 2026 – Present</span>
               <p class="cert-desc">Currently learning HTML, CSS, and JavaScript fundamentals.</p>
               <a class="cert-link" onclick="openCertModal('assets/images/certifications_html_css_js_03.png')">View Certificate →</a>
             </div>
 
-          </div><!-- /certifications -->
+          </div>
         </section>
 
         <!-- ===== PROJECT ===== -->
