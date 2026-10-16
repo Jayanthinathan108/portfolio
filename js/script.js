@@ -28,42 +28,7 @@ if (savedPage && document.getElementById(savedPage)) {
   navigateTo(savedPage);
 }
 
-/* ===== THEME SWITCHER (Light / System / Dark) ===== */
-const themeBtns = document.querySelectorAll('.theme-btn');
 
-function applyTheme(mode) {
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  if (mode === 'dark') {
-    document.body.classList.add('dark');
-  } else if (mode === 'light') {
-    document.body.classList.remove('dark');
-  } else {
-    // system
-    prefersDark ? document.body.classList.add('dark') : document.body.classList.remove('dark');
-  }
-
-  // Update active button
-  themeBtns.forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.theme === mode);
-  });
-
-  localStorage.themeMode = mode;
-}
-
-// Load saved mode or default to system
-const savedMode = localStorage.themeMode || 'system';
-applyTheme(savedMode);
-
-// Button clicks
-themeBtns.forEach(btn => {
-  btn.addEventListener('click', () => applyTheme(btn.dataset.theme));
-});
-
-// Auto-update when system preference changes (only in system mode)
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-  if ((localStorage.themeMode || 'system') === 'system') applyTheme('system');
-});
 
 /* ===== PROJECT FILTER ===== */
 const filterBtns = document.querySelectorAll('.project-filters button');
@@ -189,4 +154,45 @@ document.addEventListener('keydown', (e) => {
   ) {
     e.preventDefault();
   }
+});
+
+/* ===== THEME CYCLE (Light → System → Dark → Light) ===== */
+const themeCycleBtn = document.getElementById('themeCycleBtn');
+const modes = ['light', 'system', 'dark'];
+const labels = { light: 'Light', system: 'System', dark: 'Dark' };
+
+function applyTheme(mode) {
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (mode === 'dark') {
+    document.body.classList.add('dark');
+  } else if (mode === 'light') {
+    document.body.classList.remove('dark');
+  } else {
+    // system — default, follows OS
+    prefersDark
+      ? document.body.classList.add('dark')
+      : document.body.classList.remove('dark');
+  }
+
+  if (themeCycleBtn) themeCycleBtn.textContent = labels[mode];
+  localStorage.themeMode = mode;
+}
+
+// Default = system
+const currentMode = localStorage.themeMode || 'system';
+applyTheme(currentMode);
+
+if (themeCycleBtn) {
+  // Click cycles: Light → System → Dark → Light
+  themeCycleBtn.addEventListener('click', () => {
+    const cur  = localStorage.themeMode || 'system';
+    const next = modes[(modes.indexOf(cur) + 1) % modes.length];
+    applyTheme(next);
+  });
+}
+
+// Auto update when OS changes (system mode only)
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+  if ((localStorage.themeMode || 'system') === 'system') applyTheme('system');
 });
